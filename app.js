@@ -19,32 +19,41 @@ BtnAdd.addEventListener("click", AddNew);
     
         for(let i=0; i<3;i++){
             let newID = `div-created${i}`
+            let newIDP = `p-created${i}`
             const newDiv = document.createElement('div');
-        
-            newDiv.setAttribute("id",newID)
-            document.body.appendChild(newDiv);
-            
-            
-        }
-        for(let i=0; i<3;i++){
-            let newID = `div-created${i}`;
-            let newIDP = `p-created${i}`;  
             const newH = document.createElement('p');
+            newDiv.setAttribute("id",newID);
             newH.setAttribute("id",newIDP);
+            document.body.appendChild(newDiv);
             newElement = document.getElementById(newID).appendChild(newH);
             
-            if(i==0){
-                document.getElementById(newIDP).innerHTML = `Name : ${clientinfo.fname}`;
-                console.log(fname)
-            }else if(i==1){
-                document.getElementById(newIDP).innerHTML =  `Surname : ${clientinfo.sname}`;
-
-            }else{
-                document.getElementById(newIDP).innerHTML =  `Email : ${clientinfo.eMail}}`;;
-
-            }
-
         }
-        BtnAdd.removeEventListener("click", AddNew);
-  }
+        document.getElementById('div-created0').getElementsByTagName('p')[0].innerHTML = `Name : ${clientinfo.fname}`
+        document.getElementById('div-created1').getElementsByTagName('p')[0].innerHTML = `Surname : ${clientinfo.sname}`
+        document.getElementById('div-created2').getElementsByTagName('p')[0].innerHTML = `Email : ${clientinfo.eMail}`
+        
 
+
+        BtnAdd.removeEventListener("click", AddNew);
+    }  
+
+
+    // for(let i=0; i<3;i++){
+    //     let newID = `div-created${i}`;
+    //     let newIDP = `p-created${i}`;  
+    //     const newH = document.createElement('p');
+    //     newH.setAttribute("id",newIDP);
+    //     newElement = document.getElementById(newID).appendChild(newH);
+        
+    //     if(i==0){
+    //         document.getElementById(newIDP).innerHTML = `Name : ${clientinfo.fname}`;
+    //         console.log(fname)
+    //     }else if(i==1){
+    //         document.getElementById(newIDP).innerHTML =  `Surname : ${clientinfo.sname}`;
+
+    //     }else{
+    //         document.getElementById(newIDP).innerHTML =  `Email : ${clientinfo.eMail}}`;;
+
+    //     }
+
+    // }
